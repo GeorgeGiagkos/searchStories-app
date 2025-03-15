@@ -22,13 +22,19 @@ function App() {
 				Search
 			</Typography>
 			<SearchInputBar onSelectStory={handleSelectStory} />
-			<Typography variant="h4" gutterBottom>
+			<Typography variant="h4" mt={4}>
 				Saved Stories
 			</Typography>
-			<SavedStoriesList
-				savedStories={savedStories}
-				onRemoveStory={handleRemoveStory}
-			/>
+			{savedStories.length > 0 ? (
+				<SavedStoriesList
+					savedStories={savedStories}
+					onRemoveStory={handleRemoveStory}
+				/>
+			) : (
+				<Typography variant="body1" mt={1}>
+					No saved stories yet.
+				</Typography>
+			)}
 		</>
 	);
 }

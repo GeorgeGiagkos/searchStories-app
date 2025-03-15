@@ -8,7 +8,7 @@ type Props = {
 
 export default function StoryItems({ stories, onSelectStory }: Props) {
 	return (
-		<List>
+		<List sx={{ width: '650px' }}>
 			{stories.map((story) => (
 				<ListItem key={story.objectID} onClick={() => onSelectStory(story)}>
 					{story.title && (

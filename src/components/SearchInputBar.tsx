@@ -35,6 +35,7 @@ export default function SearchInputBar({ onSelectStory }: Props) {
 	return (
 		<>
 			<TextField
+				sx={{ width: '650px' }}
 				label="Search Title"
 				variant="outlined"
 				fullWidth
