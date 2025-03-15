@@ -13,6 +13,7 @@ export default function StoryItems({ stories, onSelectStory }: Props) {
 				<ListItem key={story.objectID} onClick={() => onSelectStory(story)}>
 					{story.title && (
 						<ListItemText
+							sx={{ cursor: 'pointer' }}
 							primary={story.title}
 							secondary={`${story.points} points | by ${story.author} | ${story.num_comments} comments`}
 						/>
