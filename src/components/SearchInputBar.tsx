@@ -3,7 +3,11 @@ import { fetchStories, Story } from '../api/storiesApi';
 import { useState } from 'react';
 import StoryItems from './StoryItems';
 
-export default function SearchInputBar() {
+type Props = {
+	onSelectStory: (story: Story) => void;
+};
+
+export default function SearchInputBar({ onSelectStory }: Props) {
 	const [stories, setStories] = useState<Story[]>([]);
 	const [loading, setLoading] = useState<boolean>(false);
 
@@ -36,7 +40,9 @@ export default function SearchInputBar() {
 				onChange={handleChange}
 			/>
 			{loading && <CircularProgress />}
-			{stories.length > 0 && <StoryItems stories={stories} />}
+			{stories.length > 0 && (
+				<StoryItems stories={stories} onSelectStory={onSelectStory} />
+			)}
 		</>
 	);
 }

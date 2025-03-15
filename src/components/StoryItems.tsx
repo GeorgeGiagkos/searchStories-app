@@ -3,13 +3,14 @@ import { Story } from '../api/storiesApi';
 
 type Props = {
 	stories: Story[];
+	onSelectStory: (story: Story) => void;
 };
 
-export default function StoryItems({ stories }: Props) {
+export default function StoryItems({ stories, onSelectStory }: Props) {
 	return (
 		<List>
 			{stories.map((story) => (
-				<ListItem key={story.objectID}>
+				<ListItem key={story.objectID} onClick={() => onSelectStory(story)}>
 					{story.title && (
 						<ListItemText
 							primary={story.title}
