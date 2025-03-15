@@ -13,6 +13,7 @@ export default function SearchInputBar({ onSelectStory }: Props) {
 
 	const debouncedStories = debounce(async (query: string) => {
 		if (query.length < 3) {
+			setStories([]);
 			return;
 		}
 		setLoading(true);
