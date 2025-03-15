@@ -12,6 +12,10 @@ function App() {
 		}
 	};
 
+	const handleRemoveStory = (id: string) => {
+		setSavedStories((prev) => prev.filter((s) => s.objectID !== id));
+	};
+
 	return (
 		<>
 			<Typography variant="h4" gutterBottom>
@@ -21,7 +25,10 @@ function App() {
 			<Typography variant="h4" gutterBottom>
 				Saved Stories
 			</Typography>
-			<SavedStoriesList savedStories={savedStories} />
+			<SavedStoriesList
+				savedStories={savedStories}
+				onRemoveStory={handleRemoveStory}
+			/>
 		</>
 	);
 }
