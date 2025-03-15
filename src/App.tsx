@@ -6,12 +6,14 @@ import SavedStoriesList from './components/SavedStoriesList';
 function App() {
 	const [savedStories, setSavedStories] = useState<Story[]>([]);
 
+	// save stories in the ui
 	const handleSelectStory = (story: Story) => {
 		if (!savedStories.find((s) => s.objectID === story.objectID)) {
 			setSavedStories((prev) => [...prev, story]);
 		}
 	};
 
+	// remove stories from the ui
 	const handleRemoveStory = (id: string) => {
 		setSavedStories((prev) => prev.filter((s) => s.objectID !== id));
 	};
