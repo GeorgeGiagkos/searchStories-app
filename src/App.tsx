@@ -1,7 +1,12 @@
+import { Typography } from '@mui/material';
+import SearchInputBar from './components/SearchInputBar';
 function App() {
 	return (
 		<>
-			<h1>Harbor Lab Project</h1>
+			<Typography variant="h4" gutterBottom>
+				Search
+			</Typography>
+			<SearchInputBar />
 		</>
 	);
 }
