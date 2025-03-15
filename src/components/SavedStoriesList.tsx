@@ -20,7 +20,7 @@ export default function SavedStoriesList({
 						secondaryAction={
 							<IconButton
 								edge="end"
-								aria-label="delete"
+								aria-label={`delete-icon-${story.objectID}`}
 								onClick={() => onRemoveStory(story.objectID)}
 							>
 								<DeleteIcon />
